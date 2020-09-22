@@ -1,0 +1,15 @@
+exclude_patterns:
+- '**/test/'
+- '**/tests/'
+- '**/*.spec.ts'
+- '**/*.d.ts'
+- '**/node_modules/'
+- '**/.build/'
+
+checks:
+  method-lines:
+    config:
+      threshold: 50
+
+  file-lines:
+    enabled: false

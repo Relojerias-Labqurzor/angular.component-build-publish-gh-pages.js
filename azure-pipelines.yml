@@ -1,0 +1,63 @@
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+jobs:
+  - job: Checks
+    pool :
+      vmImage: 'ubuntu-latest'
+    steps:
+      - template: .ci/templates/steps/initialize-environment.yml
+      - template: .ci/templates/steps/install-dependencies.yml
+      - script: |
+          npm run check:commits
+        displayName: 'Linting Commits'
+      - script: |
+          npm run check:exports
+        displayName: 'Check Public API'
+    condition: eq(variables['Build.SourceBranchName'], 'merge')
+
+  - job: Test
+    pool :
+      vmImage: 'ubuntu-latest'
+    steps:
+      - template: .ci/templates/steps/initialize-environment.yml
+      - template: .ci/templates/steps/install-dependencies.yml
+      - template: .ci/templates/steps/test.yml
+        parameters:
+          codeCoverage: 'true'
+    dependsOn:
+      - Checks
+    condition: or(ne(variables['Build.SourceBranchName'], 'merge'), succeeded('Checks'))
+
+  - job: Build
+    pool :
+      vmImage: 'ubuntu-latest'
+    steps:
+      - template: .ci/templates/steps/initialize-environment.yml
+      - template: .ci/templates/steps/install-dependencies.yml
+      - template: .ci/templates/steps/create-bundle.yml
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathtoPublish: dist/angular
+          artifactName: '@uipath/angular'
+        displayName: 'Publish @uipath/angular binaries'
+        condition: succeeded()
+    dependsOn:
+      - Checks
+    condition: or(ne(variables['Build.SourceBranchName'], 'merge'), succeeded('Checks'))
+
+  - job: Documentation
+    pool :
+      vmImage: 'ubuntu-latest'
+    steps:
+      - template: .ci/templates/steps/initialize-environment.yml
+      - template: .ci/templates/steps/install-dependencies.yml
+      - script: |
+          npm run docs
+        displayName: 'Generating Docs'
+      - script: |
+          git config user.email azp@uipath.com
+          git config user.name "Azure Pipelines"
+          node .build/publish-gh-pages
+        displayName: 'Publishing Docs'
+    condition: eq(variables['Build.SourceBranchName'], 'master')
