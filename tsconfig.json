@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@uipath/angular/a11y": [
+        "./projects/angular/a11y/src/public_api.ts"
+      ],
+      "@uipath/angular/components": [
+        "./projects/angular/components/src/public_api.ts"
+      ],
+      "@uipath/angular/utilities": [
+        "./projects/angular/utilities/src/public_api.ts"
+      ],
+      "@uipath/angular/directives": [
+        "./projects/angular/directives/src/public_api.ts"
+      ],
+      "@uipath/angular/testing": [
+        "./projects/angular/testing/src/public_api.ts"
+      ],
+    }
+  }
+}
