@@ -1,0 +1,42 @@
+<ng-container *ngIf="options!.length">
+    <button [matTooltip]="togglePlaceholderTitle"
+            [color]="dirty ? 'primary' : undefined"
+            (click)="selectColumns!.open(); selectColumns!.focus()"
+            matTooltipPosition="right"
+            type="button"
+            mat-icon-button>
+        <mat-icon>view_column</mat-icon>
+    </button>
+
+    <mat-select [value]="selected"
+                [aria-label]="togglePlaceholderTitle"
+                (selectionChange)="selectionChange($event)"
+                [disableOptionCentering]="true"
+                tabIndex="-1"
+                panelClass="ui-grid-toggle-panel"
+                multiple>
+        <mat-optgroup>
+            <span>
+                <mat-icon>view_column</mat-icon> {{ toggleTitle }}
+            </span>
+
+            <a #resetBtn
+               *ngIf="dirty"
+               [matTooltip]="resetToDefaults"
+               (click)="reset()"
+               (keydown.enter)="reset()"
+               (keydown.space)="reset()"
+               (keydown)="resetKeyDown($event)"
+               class="ui-grid-toggle-reset"
+               role="button"
+               color="primary"
+               mat-button>
+                {{resetToDefaults}}
+            </a>
+
+            <mat-option *ngFor="let o of options"
+                        [disabled]="o.disabled"
+                        [value]="o.property">{{ o.label }}</mat-option>
+        </mat-optgroup>
+    </mat-select>
+</ng-container>
