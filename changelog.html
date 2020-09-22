@@ -1,0 +1,277 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>UiPath Angular Components</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">UiPath Angular Components</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="v907-2020-06-16">v9.0.7 (2020-06-16)</h1>
+<ul>
+<li><strong>grid</strong> fix a11y issue on toggle visibility column reset button</li>
+<li><strong>a11y</strong> add automatic aria-label support</li>
+</ul>
+<h1 id="v906-2020-05-14">v9.0.6 (2020-05-14)</h1>
+<ul>
+<li><strong>snackbar</strong> enable configurable plain-text only messages (to help with XSS issues)</li>
+</ul>
+<h1 id="v905-2020-04-07">v9.0.5 (2020-04-07)</h1>
+<ul>
+<li><strong>drag-and-drop-file</strong>: add multiple file types support</li>
+<li><strong>grid</strong>: fix default toggle disabled column</li>
+<li><strong>suggest</strong>: add support for minimum characters search</li>
+</ul>
+<h1 id="v904-2020-03-26">v9.0.4 (2020-03-26)</h1>
+<ul>
+<li><strong>secondformat</strong> fix localization issue</li>
+</ul>
+<h1 id="v903-2020-03-25">v9.0.3 (2020-03-25)</h1>
+<ul>
+<li><strong>grid</strong> fix scroll performance when using virtual viewport</li>
+</ul>
+<h1 id="v902-2020-03-16">v9.0.2 (2020-03-16)</h1>
+<ul>
+<li><strong>snackbar</strong> show snackbars with 0 delay (that don&#39;t auto-close)</li>
+</ul>
+<h1 id="v901-2020-02-26">v9.0.1 (2020-02-26)</h1>
+<ul>
+<li>upgrade to ng 9.0.3</li>
+</ul>
+<h1 id="v900-2020-02-12">v9.0.0 (2020-02-12)</h1>
+<ul>
+<li><strong>grid</strong> add support for toggle-able columns</li>
+<li>upgrade to ng 9</li>
+</ul>
+<h1 id="v01014-2020-01-22">v0.10.14 (2020-01-22)</h1>
+<ul>
+<li><strong>snackbar</strong> add support for custom template instead of message</li>
+</ul>
+<h1 id="v01015-2020-01-21">v0.10.15 (2020-01-21)</h1>
+<ul>
+<li><strong>suggest</strong> fix toolip and scrolling</li>
+<li><strong>suggest</strong> implement fetch strategies</li>
+<li><strong>password-toggle</strong> implement password toggle for inputs</li>
+<li><strong>password-indicator</strong> implement a complexity progress indicator</li>
+</ul>
+<h1 id="v01014-2019-12-06">v0.10.14 (2019-12-06)</h1>
+<ul>
+<li><strong>grid</strong> add <code>type=button</code>s to prevent submitting enclosing forms</li>
+<li><strong>snackbar</strong> add <code>type=button</code>s to prevent submitting enclosing forms</li>
+</ul>
+<h1 id="v01013-2019-10-25">v0.10.13 (2019-10-25)</h1>
+<ul>
+<li><strong>suggest</strong> fix <code>loading</code> state on toggle disabled</li>
+</ul>
+<h1 id="v01012-2019-10-24">v0.10.12 (2019-10-24)</h1>
+<ul>
+<li><strong>suggest</strong> fix <code>loading</code> state on toggle disabled</li>
+</ul>
+<h1 id="v01011-2019-10-24">v0.10.11 (2019-10-24)</h1>
+<ul>
+<li><strong>testing</strong> define <code>keyCode</code> and bind correct <code>code</code> in generator</li>
+</ul>
+<h1 id="v01010-2019-10-17">v0.10.10 (2019-10-17)</h1>
+<ul>
+<li><strong>grid</strong> define inline header buttons</li>
+<li><strong>grid</strong> add ability to toggle filters visibility</li>
+</ul>
+<h1 id="v0109-2019-10-03">v0.10.9 (2019-10-03)</h1>
+<ul>
+<li><strong>date-format</strong> add resolver support for timezone</li>
+</ul>
+<h1 id="v0108-2019-09-03">v0.10.8 (2019-09-03)</h1>
+<ul>
+<li><strong>ui-suggest</strong> add support for custom item template and size</li>
+</ul>
+<h1 id="v0107-2019-08-28">v0.10.7 (2019-08-28)</h1>
+<ul>
+<li><strong>grid</strong> react to ngIf-ed columns</li>
+<li><strong>drag-and-drop-file</strong> respect multiple=false flag</li>
+</ul>
+<h1 id="v0106-2019-08-01">v0.10.6 (2019-08-01)</h1>
+<ul>
+<li><strong>ui-suggest</strong> set static spinner strokeWidth</li>
+</ul>
+<h1 id="v0105-2019-07-31">v0.10.5 (2019-07-31)</h1>
+<ul>
+<li><code>*uiContentLoading</code> is a new structural directive that  will will render a progress spinner while the input value is <code>true</code> else it will render the content within the container (similar to <code>*ngIf</code>)</li>
+<li><strong>ui-progress-button</strong> fix stroke width</li>
+<li><strong>ui-progress-button</strong> add fade animation to the button text</li>
+</ul>
+<h1 id="v0104-2019-07-29">v0.10.4 (2019-07-29)</h1>
+<ul>
+<li>[progress-button] implement button augmentor directive, that enables loading state configuration via a progress bar</li>
+<li>[spinner-button] implement button augmentor directive, that enables loading state configuraiton via a spinner</li>
+</ul>
+<h1 id="v0103-2019-07-17">v0.10.3 (2019-07-17)</h1>
+<ul>
+<li>correctly export pipe modules / classes (support AOT builds)</li>
+</ul>
+<h1 id="v0102-2019-07-17">v0.10.2 (2019-07-17)</h1>
+<ul>
+<li><strong>BREAKING CHANGE</strong> rename <code>UiSnackbarIntlService</code> to <code>UiSnackbarIntl</code></li>
+</ul>
+<h1 id="v0101-2019-07-17">v0.10.1 (2019-07-17)</h1>
+<h4 id="components">Components</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/components/UiSnackBarComponent.html">snackbar</a></li>
+</ul>
+<h4 id="services">Services</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/components/UiSnackBarComponent.html">snackbar-service</a></li>
+</ul>
+<h4 id="directives">Directives</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/pipes/UiNl2BrPipe.html">nl2br</a></li>
+</ul>
+<h1 id="v0100-2019-06-13">v0.10.0 (2019-06-13)</h1>
+<ul>
+<li><strong>BREAKING CHANGE</strong> components will no longer be importent directly <code>@uipath/angular/components</code>, they will now be imported from their corresponding folder, eg: <code>@uipath/angular/components/{{NAME}}</code></li>
+<li><strong>BREAKING CHANGE</strong> directives will no longer be importent directly <code>@uipath/angular/directives</code>, they will now be imported from their corresponding folder, eg: <code>@uipath/angular/directives/{{NAME}}</code></li>
+</ul>
+<h1 id="v096-2019-06-06">v0.9.6 (2019-06-06)</h1>
+<ul>
+<li><strong>NgLet</strong> move embedded view creation in <code>ctor</code>, this will allow <code>ViewChild</code> queries to be configured with <code>static: true</code> strategy</li>
+</ul>
+<h1 id="v095-2019-06-05">v0.9.5 (2019-06-05)</h1>
+<ul>
+<li>upgrade to <code>angular@8</code></li>
+<li><strong>UiGrid</strong> complete <code>visible$</code> columns BehaviorSubject</li>
+<li><strong>UiGridFilter</strong> call destroy hook in child classes</li>
+</ul>
+<h1 id="v093-hotfix1-2019-06-05">v0.9.3-hotfix1 (2019-06-05)</h1>
+<ul>
+<li><strong>UiGrid</strong> correctly bind to the search <code>maxlength</code> attribute</li>
+</ul>
+<h1 id="v093-2019-06-02">v0.9.3 (2019-06-02)</h1>
+<h3 id="fixes">Fixes:</h3>
+<ul>
+<li><strong>UiGridModule</strong> remove barrel definitions for decorated classes (fixes AOT build issues).</li>
+</ul>
+<h1 id="v092-2019-06-01">v0.9.2 (2019-06-01)</h1>
+<h3 id="features">Features:</h3>
+<ul>
+<li><strong>EventGenerator</strong> expose the <code>cursor</code> utility that injects a cursor image, to help visualize UTs.</li>
+</ul>
+<h1 id="v091-2019-06-01">v0.9.1 (2019-06-01)</h1>
+<h3 id="first-official-release">First Official Release</h3>
+<h4 id="components-1">Components</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/modules/UiGridModule.html">grid</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiSuggestModule.html">suggest</a></li>
+</ul>
+<h4 id="directives-1">Directives</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/modules/UiAutofocusModule.html">autofocus</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiClickOutsideModule.html">click-outside</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiClipboardModule.html">clipboard</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiDateFormatModule.html">date-format</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiSecondFormatModule.html">second-format</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiDragAndDropModule.html">drag-and-drop</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiNgLetModule.html">ng-let</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiScrollIntoViewModule.html">scroll-into-view</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiVirtualScrollRangeLoaderModule.html">virtual-scroll-range-loader</a></li>
+<li><a href="https://uipath.github.io/angular-components/modules/UiVirtualScrollViewportResizeModule.html">virtual-scroll-viewport-resize</a></li>
+</ul>
+<h4 id="a11y">a11y</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/injectables/QueuedAnnouncer.html">queued-announcer</a></li>
+</ul>
+<h4 id="testing">Testing</h4>
+<ul>
+<li><a href="https://uipath.github.io/angular-components/classes/EventGenerator.html">EventGenerator</a></li>
+<li><a href="https://uipath.github.io/angular-components/classes/Key.html">Key</a></li>
+<li><a href="https://uipath.github.io/angular-components/classes/FakeFileList.html">FakeFileList</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'changelog.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
