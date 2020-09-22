@@ -1,0 +1,60 @@
+<ui-grid [data]="data"
+         [toggleColumns]="true"
+         class="ui-robots-page-grid">
+    <ui-grid-column title="Id"
+                    property="id"
+                    [visible]="false"
+                    width="5%">
+    </ui-grid-column>
+
+    <ui-grid-column title="Name"
+                    property="name"
+                    [disableToggle]="true"
+                    width="95%">
+        <ui-grid-dropdown-filter [items]="[]"
+                                 [showAllOption]="showAllOption"></ui-grid-dropdown-filter>
+    </ui-grid-column>
+    <ui-grid-column title="Username"
+                    property="surname"
+                    width="30%">
+    </ui-grid-column>
+
+    <ui-grid-column title="Address"
+                    [visible]="false"
+                    property="adr"
+                    width="30%">
+    </ui-grid-column>
+
+    <ui-grid-column title="Phone"
+                    [visible]="true"
+                    property="ph"
+                    width="30%">
+    </ui-grid-column>
+    <ui-grid-column title="vis-not-locked"
+                    property="vis-not-locked"
+                    [visible]="true"
+                    [disableToggle]="false"
+                    width="5%">
+    </ui-grid-column>
+    <ui-grid-column title="prop2"
+                    property="prop2"
+                    [visible]="false"
+                    width="5%">
+    </ui-grid-column>
+    <ui-grid-column title="hidden-locked"
+                    property="hidden-locked"
+                    [visible]="false"
+                    [disableToggle]="true"
+                    width="5%">
+    </ui-grid-column>
+    <ui-grid-column title="prop4"
+                    property="prop4"
+                    [visible]="false"
+                    width="5%">
+    </ui-grid-column>
+    <ui-grid-column title="prop5"
+                    property="prop5"
+                    [visible]="false"
+                    width="5%">
+    </ui-grid-column>
+</ui-grid>

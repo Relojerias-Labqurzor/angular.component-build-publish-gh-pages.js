@@ -1,0 +1,332 @@
+@import "~@angular/material/theming";
+@import "../../styles/ellipse";
+
+$height: 40px;
+$item-height: 32px;
+$form-control-height: 18px;
+$display-padding: 15px;
+$icon-size: 18px;
+$mat-icon-size: 24px;
+$default-border-radius: 4px;
+/* https://github.com/angular/material2/blob/master/src/lib/button/_button-base.scss */
+$ui-suggest-focus-transition: background-color 200ms $swift-ease-in-out-timing-function;
+
+$componentName: "ui-suggest";
+
+#{$componentName} {
+    position: relative;
+    display: block;
+
+    .text-ellipsis {
+        @extend %ellipse;
+    }
+
+    &.disabled {
+        opacity: 0.38;
+    }
+
+    &,
+    .item-list-container .mat-list-item {
+        .readonly,
+        &.disabled {
+            pointer-events: none;
+        }
+        &.is-loading {
+            font-style: italic;
+            opacity: 0.8;
+        }
+    }
+
+    .display-title {
+        font-weight: 700;
+    }
+
+    .display-value {
+        &:after {
+            content: "";
+            display: inline-block;
+        }
+    }
+
+    .item-list-container {
+        display: block;
+        position: absolute;
+        z-index: 5;
+        border-radius: $default-border-radius;
+        width: 100%;
+
+        .ui-suggest-item {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+        }
+
+        .mat-form-field {
+            $field-padding: 16px;
+
+            padding: 0 $field-padding;
+            width: calc(100% - #{$field-padding * 2}) !important;
+            margin-bottom: 0 !important;
+            height: $height;
+            &-infix {
+                border: 7px solid transparent;
+                border-left: none;
+                border-right: none;
+                padding: 0 0 5px 0;
+                border-left: 0;
+                border-right: 0;
+            }
+            &-suffix {
+                align-self: center;
+
+                mat-icon {
+                    font-size: 24px;
+                }
+            }
+            &-wrapper {
+                padding-bottom: 0;
+            }
+            &-underline {
+                bottom: 7px;
+            }
+        }
+
+        .mat-list {
+            overflow-y: auto;
+            padding-top: 0;
+
+            &-item {
+                cursor: pointer;
+
+                &.text-ellipsis .mat-list-item-content {
+                    display: block;
+                }
+
+                mat-progress-spinner {
+                    margin: 0 auto;
+                }
+
+                .mat-icon {
+                    vertical-align: middle;
+                    padding-right: 5px;
+                    margin-top: -3px;
+                }
+
+                .text-label {
+                    outline: none;
+                    margin-left: 5px;
+                    user-select: none;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        &-state-closed {
+            display: none;
+        }
+
+        cdk-virtual-scroll-viewport {
+            height: 100vh;
+            overflow-x: hidden;
+
+            .cdk-virtual-scroll-content-wrapper {
+                width: 100%;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .display {
+        cursor: pointer;
+        user-select: none;
+        border-radius: $default-border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+
+        &-container {
+            max-width: calc(100% - #{$mat-icon-size});
+        }
+    }
+}
+
+#{$componentName}:not(.form-control) {
+    $searchUpDown: 3px;
+    $searchLeft: -1px;
+
+    .display,
+    .mat-form-field-label {
+        font-size: 0.8rem;
+    }
+
+    .display {
+        height: $height;
+        line-height: $height;
+        transition: $ui-suggest-focus-transition;
+        padding: 0 6px 0 16px;
+
+        &-container {
+            max-width: 200px;
+        }
+    }
+
+    .item-list-container {
+        left: $searchLeft;
+        &-direction {
+            &-down {
+                top: $searchUpDown;
+                transform-origin: top left;
+
+                .mat-list-item:last-child {
+                    border-bottom-left-radius: $default-border-radius;
+                    border-bottom-right-radius: $default-border-radius;
+                }
+            }
+            &-up {
+                bottom: -$searchUpDown;
+                transform-origin: bottom left;
+
+                .mat-list-item:first-child {
+                    border-top-left-radius: $default-border-radius;
+                    border-top-right-radius: $default-border-radius;
+                }
+            }
+        }
+
+        .mat-list {
+            &-item {
+                height: $height;
+
+                &.text-ellipsis .mat-list-item-content {
+                    line-height: $height;
+                }
+
+                &.no-results-text .mat-list-item-content {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+#{$componentName}.form-control {
+    .mat-form-field-flex {
+        padding: 0;
+        background: inherit;
+    }
+
+    .display {
+        font-size: 14px;
+        height: $form-control-height;
+        line-height: $form-control-height;
+    }
+
+    .item-list-container {
+        &-direction {
+            &-down {
+                top: -7px;
+
+                .mat-list-item:last-child {
+                    border-bottom-left-radius: $default-border-radius;
+                    border-bottom-right-radius: $default-border-radius;
+                }
+                &.searchable {
+                    top: -5px;
+                }
+            }
+            &-up {
+                bottom: -5px;
+
+                .mat-list-item:first-child {
+                    border-top-left-radius: $default-border-radius;
+                    border-top-right-radius: $default-border-radius;
+                }
+
+                &.searchable {
+                    bottom: -17px;
+                }
+            }
+        }
+
+        .mat-list {
+            .mat-icon {
+                height: $icon-size;
+                font-size: $icon-size;
+                padding-right: 0;
+            }
+
+            &-item {
+                height: $item-height;
+                font-size: 14px;
+
+                &.text-ellipsis .mat-list-item-content {
+                    line-height: $item-height;
+                }
+            }
+
+            .mat-checkbox-ripple.mat-ripple {
+                height: 33px;
+                width: 33px;
+                left: -7px;
+                top: -7px;
+            }
+        }
+    }
+}
+
+.mat-form-field-appearance-outline {
+    ui-suggest {
+        margin-top: -1px;
+
+        .display {
+            > mat-icon.arrow-down {
+                margin-top: -6px;
+            }
+        }
+
+        .mat-form-field {
+            .mat-form-field-suffix {
+                height: 36px;
+            }
+        }
+    }
+}
+
+.mat-form-field-appearance-fill {
+    ui-suggest {
+        margin-top: -2px;
+
+        .display {
+            > mat-icon.arrow-down {
+                margin-top: -12px;
+            }
+        }
+
+        .mat-form-field {
+            .mat-form-field-suffix {
+                height: 32px;
+            }
+        }
+    }
+}
+
+.mat-form-field-appearance-standard {
+    ui-suggest {
+        .mat-form-field {
+            .mat-form-field-suffix {
+                height: 32px;
+            }
+        }
+    }
+}
